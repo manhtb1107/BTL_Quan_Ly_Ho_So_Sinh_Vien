@@ -47,21 +47,21 @@ Hệ thống Quản lý Hồ sơ Sinh viên Đại học (DNU) là nền tảng 
 
 ## 🚀 3. Hình ảnh các chức năng
 ### Trang đăng nhập
-<img width="1902" height="931" alt="image" src="https://github.com/user-attachments/assets/TrangChu" />
-### Trang dashboard admin
-<img width="1885" height="935" alt="image" src="https://github.com/user-attachments/assets/ef86f98f-d8aa-4bdd-8157-ee1bae6a0a09" />
+<img width="1912" height="990" alt="Image" src="https://github.com/user-attachments/assets/6bf8369b-3219-4032-bb6e-ccd8aa2d735b" />
+### Trang dashboard
+<img width="1905" height="987" alt="Image" src="https://github.com/user-attachments/assets/aa601f7c-648a-4d21-a554-fd17ab4d2714" />
 ### Trang quản lý sinh viên 
-<img width="1886" height="940" alt="image" src="https://github.com/user-attachments/assets/486fc55b-6c61-46e6-9c92-ca52ad7ad1b2" />
+<img width="1907" height="972" alt="Image" src="https://github.com/user-attachments/assets/16bebe47-6b24-4030-85b2-6986b397db64" />
 ### Trang quản lí môn học     
-<img width="1890" height="932" alt="image" src="https://github.com/user-attachments/assets/2b5e861a-8a59-4505-8149-4ceb1ec6b503" />
+<img width="1913" height="863" alt="Image" src="https://github.com/user-attachments/assets/cf5096be-ea1b-4f88-bb46-d1c5871447af" />
 ### Trang quản lý điểm số
-<img width="1901" height="939" alt="image" src="https://github.com/user-attachments/assets/f3c88b32-5c7e-4911-b977-303523e5e4e3" />
+<img width="1905" height="863" alt="Image" src="https://github.com/user-attachments/assets/fdd95747-9092-4d6b-bd95-5ca90c0358bc" />
 ### Trang quản lý ngành
-<img width="1892" height="938" alt="image" src="https://github.com/user-attachments/assets/0ed13de0-2745-4770-b045-980c513a380d" />
+<img width="1918" height="870" alt="Image" src="https://github.com/user-attachments/assets/fa320bf4-920a-4c8a-86aa-fc31b2eff4bb" />
 ### Trang thống kê sinh viên
-<img width="1882" height="937" alt="image" src="https://github.com/user-attachments/assets/763dbe71-4984-459f-8348-18ce505479cc" />
+<img width="1903" height="922" alt="Image" src="https://github.com/user-attachments/assets/519af73d-76db-47dd-8303-89c9bad9f42d" />
 ### Trang báo cáo điểm số
-<img width="1882" height="937" alt="image" src="https://github.com/user-attachments/assets/3b6a90e7-e622-4cc3-ab67-3218b195f8ed" />
+<img width="1919" height="869" alt="Image" src="https://github.com/user-attachments/assets/7ed5d3e2-a676-4205-9ca4-da6ee60958bf" />
 
 ### 4.1. Cài đặt công cụ, môi trường và các thư viện cần thiết
 
