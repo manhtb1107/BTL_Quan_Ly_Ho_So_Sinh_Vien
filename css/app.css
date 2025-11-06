@@ -1,0 +1,67 @@
+:root {
+    --brand-primary: #0d6efd;
+    --brand-accent: #6610f2;
+    --brand-success: #1aa179;
+    --brand-danger: #e55353;
+    --bg-soft: #f8f9fb;
+}
+
+body {
+    background: var(--bg-soft);
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 24px 0 16px;
+}
+
+.page-header .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.card-table .table {
+    margin: 0;
+}
+
+.table thead th {
+    background-color: #f1f3f5;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f9fbff;
+}
+
+.badge-soft {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--brand-primary);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.search-box {
+    max-width: 360px;
+}
+
+.empty-state {
+    text-align: center;
+    color: #6c757d;
+    padding: 24px 0;
+}
+
+
