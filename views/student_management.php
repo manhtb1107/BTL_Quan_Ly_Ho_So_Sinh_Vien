@@ -8,7 +8,7 @@ checkLogin(__DIR__ . '/../index.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý hồ sơ sinh viên - DNU</title>
+    <title>Dashboard quản trị - DNU</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -465,9 +465,9 @@ checkLogin(__DIR__ . '/../index.php');
                 <div>
                     <h1 class="page-title">
                         <i class="fas fa-user-graduate"></i>
-                        Quản lý hồ sơ sinh viên
+                        Dashboard quản trị
                     </h1>
-                    <p class="page-subtitle">Hệ thống quản lý thông tin sinh viên - Đại học Đại Nam</p>
+                    <p class="page-subtitle">Trung tâm quản lý tất cả phân hệ: sinh viên, lớp, ngành, môn, điểm và báo cáo</p>
                 </div>
             </div>
         </div>
@@ -498,24 +498,20 @@ checkLogin(__DIR__ . '/../index.php');
 
         <!-- Features Grid -->
         <div class="features-grid">
-            <!-- Cập nhật hồ sơ -->
+            <!-- Sinh viên -->
             <div class="feature-module">
                 <div class="module-header">
                     <i class="fas fa-edit"></i>
-                    <h3>Cập nhật hồ sơ</h3>
+                    <h3>Sinh viên</h3>
                 </div>
                 <div class="module-body">
                     <a href="student/create_student.php" class="module-item">
                         <i class="fas fa-plus-circle"></i>
-                        <span>Nhập hồ sơ mới</span>
+                        <span>Thêm sinh viên</span>
                     </a>
                     <a href="student.php" class="module-item">
                         <i class="fas fa-edit"></i>
-                        <span>Bổ sung hồ sơ</span>
-                    </a>
-                    <a href="student_classification.php" class="module-item">
-                        <i class="fas fa-tags"></i>
-                        <span>Phân loại hồ sơ</span>
+                        <span>Danh sách & cập nhật thông tin</span>
                     </a>
                 </div>
             </div>
@@ -534,6 +530,32 @@ checkLogin(__DIR__ . '/../index.php');
                     <a href="search_by_major.php" class="module-item">
                         <i class="fas fa-graduation-cap"></i>
                         <span>Tìm kiếm theo ngành</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Danh mục & Quản trị -->
+            <div class="feature-module">
+                <div class="module-header">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Danh mục & Quản trị</h3>
+                </div>
+                <div class="module-body">
+                    <a href="class.php" class="module-item">
+                        <i class="fas fa-chalkboard"></i>
+                        <span>Quản lý lớp học</span>
+                    </a>
+                    <a href="major.php" class="module-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Quản lý ngành học</span>
+                    </a>
+                    <a href="subject.php" class="module-item">
+                        <i class="fas fa-book"></i>
+                        <span>Quản lý môn học</span>
+                    </a>
+                    <a href="grade.php" class="module-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Quản lý điểm số</span>
                     </a>
                 </div>
             </div>

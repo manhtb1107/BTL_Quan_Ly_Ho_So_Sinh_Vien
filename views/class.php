@@ -12,7 +12,8 @@ checkLogin(__DIR__ . '/../index.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="/baitaplon/css/app.css" rel="stylesheet">
+    <link href="/baitaplon/assets/css/app.css" rel="stylesheet">
+    <link href="/baitaplon/assets/css/class.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -407,33 +408,6 @@ checkLogin(__DIR__ . '/../index.php');
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Thêm hiệu ứng loading cho các nút
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (this.classList.contains('btn-add') || this.classList.contains('btn-primary')) {
-                    const originalText = this.innerHTML;
-                    this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Đang xử lý...';
-                    this.disabled = true;
-                    
-                    setTimeout(() => {
-                        this.innerHTML = originalText;
-                        this.disabled = false;
-                    }, 1000);
-                }
-            });
-        });
-
-        // Thêm hiệu ứng cho bảng
-        document.querySelectorAll('.table tbody tr').forEach(row => {
-            row.addEventListener('mouseenter', function() {
-                this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-            });
-            
-            row.addEventListener('mouseleave', function() {
-                this.style.boxShadow = 'none';
-            });
-        });
-    </script>
+    <script src="/baitaplon/assets/js/common.js"></script>
 </body>
 </html>
