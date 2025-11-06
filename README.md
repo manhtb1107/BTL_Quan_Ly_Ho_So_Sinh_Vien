@@ -47,7 +47,7 @@ Hệ thống Quản lý Hồ sơ Sinh viên Đại học (DNU) là nền tảng 
 
 ## 🚀 3. Hình ảnh các chức năng
 ### Trang đăng nhập
-<img width="1902" height="931" alt="image" src="https://github.com/user-attachments/assets/c982cf12-24f8-4137-8ad4-d6c8768c5e54" />
+<img width="1902" height="931" alt="image" src="https://github.com/user-attachments/assets/TrangChu" />
 ### Trang dashboard admin
 <img width="1885" height="935" alt="image" src="https://github.com/user-attachments/assets/ef86f98f-d8aa-4bdd-8157-ee1bae6a0a09" />
 ### Trang quản lý sinh viên 
