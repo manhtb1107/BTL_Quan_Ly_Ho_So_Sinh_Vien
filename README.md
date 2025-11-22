@@ -1,6 +1,3 @@
-
-    🎓 Faculty of Information Technology (DaiNam University)
-    </a>
 </h2>
 <h2 align="center">
     Quản Lý Hồ Sơ Sinh Viên Đại Học
