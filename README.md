@@ -1,10 +1,9 @@
-<img width="1913" height="988" alt="{C3BBAB8E-12CA-47B4-A5B6-F26C79467D9F}" src="https://github.com/user-attachments/assets/895dca93-c2a6-43eb-8160-2d6d6127a3d4" /><img width="1897" height="987" alt="{D418FED9-FC71-41F2-B007-C8A0A52CF943}" src="https://github.com/user-attachments/assets/cf5bcacd-d5ea-4542-82b7-1f985e50922c" /><h2 align="center">
-    <a href="https://dainam.edu.vn/vi/khoa-cong-nghe-thong-tin">
+
     🎓 Faculty of Information Technology (DaiNam University)
     </a>
 </h2>
 <h2 align="center">
-    Youth Union Member Management
+    Quản Lý Hồ Sơ Sinh Viên Đại Học
 </h2>
 <div align="center">
     <p align="center">
@@ -20,7 +19,7 @@
 </div>
  
 ## 📖 1. Giới thiệu
-Hệ thống Quản lý Đoàn viên trong trường Đại học được xây dựng nhằm hỗ trợ công tác quản lý, theo dõi và đánh giá hoạt động của Đoàn Thanh niên trong môi trường giáo dục đại học. Thay vì quản lý thủ công bằng giấy tờ hay các tệp Excel rời rạc, hệ thống mang đến một giải pháp tập trung, hiện đại và dễ sử dụng.
+Hệ thống Quản lý Hồ sơ Sinh viên trong trường Đại học được xây dựng nhằm hỗ trợ công tác quản lý thông tin sinh viên, theo dõi kết quả học tập và quản lý điểm số trong môi trường giáo dục đại học. Thay vì quản lý thủ công bằng giấy tờ hay các tệp Excel rời rạc, hệ thống mang đến một giải pháp tập trung, hiện đại và dễ sử dụng, giúp nhà trường quản lý hiệu quả hồ sơ sinh viên, lớp học, môn học và điểm số với khả năng tìm kiếm nhanh, nhập điểm tự động tính toán, và xuất báo cáo thống kê trực quan.
 
 ## 🔧 2. Các công nghệ được sử dụng
 <div align="center">
