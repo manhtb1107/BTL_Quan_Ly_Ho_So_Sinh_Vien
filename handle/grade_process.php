@@ -20,10 +20,14 @@ switch ($action) {
     case 'delete':
         handleDeleteGrade();
         break;
-    // default:
-    //     header("Location: ../views/grade.php?error=Hành động không hợp lệ");
-    //     exit();
+    case 'batch_update':
+        handleBatchUpdateGrades();
+        break;
+    default:
+        header("Location: ../views/grade.php?error=Hành động không hợp lệ");
+        exit();
 }
+
 /**
  * Lấy tất cả danh sách điểm
  */
@@ -161,6 +165,54 @@ function handleDeleteGrade() {
         header("Location: ../views/grade.php?success=Xóa điểm thành công");
     } else {
         header("Location: ../views/grade.php?error=Có lỗi xảy ra khi xóa điểm");
+    }
+    exit();
+}
+
+/**
+ * Xử lý cập nhật điểm hàng loạt
+ */
+function handleBatchUpdateGrades() {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        header("Location: ../views/grade.php?error=Phương thức không hợp lệ");
+        exit();
+    }
+    
+    if (!isset($_POST['subject_id']) || !isset($_POST['students'])) {
+        header("Location: ../views/grade.php?error=Thiếu thông tin cần thiết");
+        exit();
+    }
+    
+    $subjectId = (int)$_POST['subject_id'];
+    $semester = $_POST['semester'] ?? '';
+    $academicYear = $_POST['academic_year'] ?? '';
+    $students = $_POST['students'];
+    
+    if (empty($subjectId)) {
+        header("Location: ../views/grade.php?error=Vui lòng chọn môn học");
+        exit();
+    }
+    
+    try {
+        $success = batchUpdateGrades($students, $subjectId, $semester, $academicYear);
+        
+        if ($success) {
+            $redirectUrl = "../views/grade.php?success=Cập nhật điểm thành công&subject_id=$subjectId";
+            if (!empty($semester)) $redirectUrl .= "&semester=$semester";
+            if (!empty($academicYear)) $redirectUrl .= "&academic_year=$academicYear";
+            header("Location: $redirectUrl");
+        } else {
+            $redirectUrl = "../views/grade.php?error=Có lỗi xảy ra khi cập nhật điểm&subject_id=$subjectId";
+            if (!empty($semester)) $redirectUrl .= "&semester=$semester";
+            if (!empty($academicYear)) $redirectUrl .= "&academic_year=$academicYear";
+            header("Location: $redirectUrl");
+        }
+    } catch (Exception $e) {
+        $errorMsg = urlencode($e->getMessage());
+        $redirectUrl = "../views/grade.php?error=$errorMsg&subject_id=$subjectId";
+        if (!empty($semester)) $redirectUrl .= "&semester=$semester";
+        if (!empty($academicYear)) $redirectUrl .= "&academic_year=$academicYear";
+        header("Location: $redirectUrl");
     }
     exit();
 }

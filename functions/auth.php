@@ -89,7 +89,7 @@ function isLoggedIn() {
  * @return array|false Trả về thông tin user nếu đúng, false nếu sai
  */
 function authenticateUser($conn, $username, $password) {
-    $sql = "SELECT id, username, password, role FROM users WHERE username = ? LIMIT 1";
+    $sql = "SELECT id, username, password, role, is_active FROM users WHERE username = ? LIMIT 1";
     $stmt = mysqli_prepare($conn, $sql);
     if (!$stmt) return false;
     mysqli_stmt_bind_param($stmt, "s", $username);
@@ -97,13 +97,75 @@ function authenticateUser($conn, $username, $password) {
     $result = mysqli_stmt_get_result($stmt);
     if ($result && mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
-        if ($password === $user['password']) { // Nên dùng password_verify nếu có mã hóa
+        
+        // Kiểm tra tài khoản có bị khóa không
+        if (!$user['is_active']) {
+            mysqli_stmt_close($stmt);
+            return 'inactive'; // Trả về 'inactive' để phân biệt với sai mật khẩu
+        }
+        
+        // So sánh mật khẩu đã hash với MD5
+        if (md5($password) === $user['password']) {
             mysqli_stmt_close($stmt);
             return $user;
         }
     }
     if ($stmt) mysqli_stmt_close($stmt);
     return false;
+}
+
+/**
+ * Kiểm tra xem user có phải Admin không
+ * @return bool True nếu là Admin, False nếu không
+ */
+function isAdmin() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    return isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
+}
+
+/**
+ * Kiểm tra xem user có phải Teacher không
+ * @return bool True nếu là Teacher, False nếu không
+ */
+function isTeacher() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    return isset($_SESSION['role']) && $_SESSION['role'] === 'teacher';
+}
+
+/**
+ * Kiểm tra quyền Admin, nếu không phải Admin thì redirect
+ * @param string $redirectPath Đường dẫn redirect nếu không có quyền
+ */
+function requireAdmin($redirectPath = '../index.php') {
+    checkLogin($redirectPath);
+    if (!isAdmin()) {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $_SESSION['error'] = 'Bạn không có quyền truy cập trang này!';
+        header('Location: ' . $redirectPath);
+        exit();
+    }
+}
+
+/**
+ * Kiểm tra quyền (Admin hoặc Teacher)
+ * @param string $redirectPath Đường dẫn redirect nếu không có quyền
+ */
+function requireTeacherOrAdmin($redirectPath = '../index.php') {
+    checkLogin($redirectPath);
+    if (!isAdmin() && !isTeacher()) {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        $_SESSION['error'] = 'Bạn không có quyền truy cập trang này!';
+        header('Location: ' . $redirectPath);
+        exit();
+    }
 }
 
 ?>

@@ -20,6 +20,9 @@ switch ($action) {
     case 'delete':
         handleDeleteSubject();
         break;
+    case 'bulk_delete':
+        handleBulkDeleteSubject();
+        break;
     // default:
     //     header("Location: ../views/subject.php?error=Hành động không hợp lệ");
     //     exit();
@@ -42,27 +45,33 @@ function handleCreateSubject () {
         exit();
     }
     
-    if (!isset($_POST['subject_code']) || !isset($_POST['subject_name'])) {
+    if (!isset($_POST['subject_code']) || !isset($_POST['subject_name']) || !isset($_POST['major_id'])) {
         header("Location: ../views/subject/create_subject.php?error=Thiếu thông tin cần thiết");
         exit();
     }
     
-    $subject_code = trim($_POST['subject_code']);
-    $subject_name = trim($_POST['subject_name']);
+    $data = [
+        'subject_code' => trim($_POST['subject_code']),
+        'subject_name' => trim($_POST['subject_name']),
+        'credits' => intval($_POST['credits'] ?? 3),
+        'major_id' => intval($_POST['major_id']),
+        'subject_type' => trim($_POST['subject_type'] ?? ''),
+        'description' => trim($_POST['description'] ?? '')
+    ];
     
     // Validate dữ liệu
-    if (empty($subject_code) || empty($subject_name)) {
+    if (empty($data['subject_code']) || empty($data['subject_name']) || empty($data['major_id'])) {
         header("Location: ../views/subject/create_subject.php?error=Vui lòng điền đầy đủ thông tin");
         exit();
     }
 
     // Gọi hàm thêm học phần
-    $result = addSubject($subject_code, $subject_name);
+    $result = addSubject($data);
 
     if ($result) {
-        header("Location: ../views/subject.php?success=Thêm học phần thành công");
+        header("Location: ../views/subject.php?success=Thêm môn học thành công");
     } else {
-        header("Location: ../views/subject/create_subject.php?error=Có lỗi xảy ra khi thêm học phần");
+        header("Location: ../views/subject/create_subject.php?error=Có lỗi xảy ra khi thêm môn học");
     }
     exit();
 }
@@ -76,28 +85,34 @@ function handleEditSubject() {
         exit();
     }
     
-    if (!isset($_POST['id']) || !isset($_POST['subject_code']) || !isset($_POST['subject_name'])) {
+    if (!isset($_POST['id']) || !isset($_POST['subject_code']) || !isset($_POST['subject_name']) || !isset($_POST['major_id'])) {
         header("Location: ../views/subject.php?error=Thiếu thông tin cần thiết");
         exit();
     }
     
-    $id = $_POST['id'];
-    $subject_code = trim($_POST['subject_code']);
-    $subject_name = trim($_POST['subject_name']);
+    $id = intval($_POST['id']);
+    $data = [
+        'subject_code' => trim($_POST['subject_code']),
+        'subject_name' => trim($_POST['subject_name']),
+        'credits' => intval($_POST['credits'] ?? 3),
+        'major_id' => intval($_POST['major_id']),
+        'subject_type' => trim($_POST['subject_type'] ?? ''),
+        'description' => trim($_POST['description'] ?? '')
+    ];
     
     // Validate dữ liệu
-    if (empty($subject_code) || empty($subject_name)) {
-        header("Location: ../views/edit_subject.php?id=" . $id . "&error=Vui lòng điền đầy đủ thông tin");
+    if (empty($data['subject_code']) || empty($data['subject_name']) || empty($data['major_id'])) {
+        header("Location: ../views/subject/edit_subject.php?id=" . $id . "&error=Vui lòng điền đầy đủ thông tin");
         exit();
     }
 
     // Gọi function để cập nhật học phần
-    $result = updateSubject($id, $subject_code, $subject_name);
+    $result = updateSubject($id, $data);
     
     if ($result) {
-        header("Location: ../views/subject.php?success=Cập nhật học phần thành công");
+        header("Location: ../views/subject.php?success=Cập nhật môn học thành công");
     } else {
-        header("Location: ../views/edit_subject.php?id=" . $id . "&error=Cập nhật học phần thất bại");
+        header("Location: ../views/subject/edit_subject.php?id=" . $id . "&error=Cập nhật môn học thất bại");
     }
     exit();
 }
@@ -131,6 +146,42 @@ function handleDeleteSubject() {
         header("Location: ../views/subject.php?success=Xóa học phần thành công");
     } else {
         header("Location: ../views/subject.php?error=Xóa học phần thất bại");
+    }
+    exit();
+}
+
+/**
+ * Xử lý xóa nhiều môn học
+ */
+function handleBulkDeleteSubject() {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        header("Location: ../views/subject.php?error=Phương thức không hợp lệ");
+        exit();
+    }
+    
+    if (!isset($_POST['ids']) || !is_array($_POST['ids']) || empty($_POST['ids'])) {
+        header("Location: ../views/subject.php?error=Không có môn học nào được chọn");
+        exit();
+    }
+    
+    $ids = array_map('intval', $_POST['ids']);
+    $successCount = 0;
+    $failCount = 0;
+    
+    foreach ($ids as $id) {
+        if (deleteSubject($id)) {
+            $successCount++;
+        } else {
+            $failCount++;
+        }
+    }
+    
+    if ($successCount > 0 && $failCount === 0) {
+        header("Location: ../views/subject.php?success=Đã xóa thành công $successCount môn học");
+    } elseif ($successCount > 0 && $failCount > 0) {
+        header("Location: ../views/subject.php?success=Đã xóa $successCount môn học, $failCount thất bại");
+    } else {
+        header("Location: ../views/subject.php?error=Xóa môn học thất bại");
     }
     exit();
 }

@@ -69,7 +69,11 @@ require_once __DIR__ . '/../../functions/grade_functions.php';
                                         <?php foreach ($students as $student): ?>
                                             <option value="<?= $student['id'] ?>" 
                                                 <?= $student['id'] == $gradeInfo['student_id'] ? 'selected' : '' ?>>
-                                                <?= htmlspecialchars($student['student_code']) ?> - <?= htmlspecialchars($student['student_name']) ?>
+                                                <span class="badge bg-primary text-white me-2" style="font-size: 0.8rem;">
+                                                    <i class="fas fa-id-card me-1"></i>
+                                                    <?= htmlspecialchars($student['student_code']) ?>
+                                                </span>
+                                                <?= htmlspecialchars($student['student_name']) ?>
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
@@ -92,7 +96,7 @@ require_once __DIR__ . '/../../functions/grade_functions.php';
                                     <label for="grade" class="form-label">Điểm (0-10)</label>
                                     <input type="number" class="form-control" id="grade" name="grade" 
                                            min="0" max="10" step="0.1" 
-                                           value="<?php echo htmlspecialchars($gradeInfo['grade']); ?>" required>
+                                           value="<?php echo htmlspecialchars($gradeInfo['total_score']); ?>" required>
                                 </div>
 
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

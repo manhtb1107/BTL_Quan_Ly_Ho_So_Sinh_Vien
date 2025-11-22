@@ -1,0 +1,11 @@
+student_code,full_name,date_of_birth,gender,phone,email,address,hometown,id_card,class_code,major_code,academic_year,status,enrollment_date
+SV001,Nguyễn Văn An,15/03/2005,Nam,0912345678,nguyenvanan@gmail.com,123 Đường Láng,Hà Nội,001205012345,CNTT01,CNTT,2023-2027,Đang học,01/09/2023
+SV002,Trần Thị Bình,20/07/2005,Nữ,0987654321,tranthibinh@gmail.com,456 Giải Phóng,Hà Nội,001205067890,CNTT01,CNTT,2023-2027,Đang học,01/09/2023
+SV003,Lê Hoàng Cường,10/11/2004,Nam,0901234567,lehoangcuong@gmail.com,789 Nguyễn Trãi,Hà Nội,001204098765,CNTT02,CNTT,2022-2026,Đang học,01/09/2022
+SV004,Phạm Thị Dung,25/02/2005,Nữ,0976543210,phamthidung@gmail.com,321 Cầu Giấy,Hà Nội,001205054321,KT01,KT,2023-2027,Đang học,01/09/2023
+SV005,Hoàng Văn Em,05/08/2005,Nam,0965432109,hoangvanem@gmail.com,654 Đống Đa,Hà Nội,001205087654,KT01,KT,2023-2027,Đang học,01/09/2023
+SV006,Vũ Thị Phương,12/12/2004,Nữ,0954321098,vuthiphuong@gmail.com,987 Hai Bà Trưng,Hà Nội,001204123456,CNTT02,CNTT,2022-2026,Đang học,01/09/2022
+SV007,Đặng Văn Giang,30/06/2005,Nam,0943210987,dangvangiang@gmail.com,147 Thanh Xuân,Hà Nội,001205065432,CNTT01,CNTT,2023-2027,Đang học,01/09/2023
+SV008,Bùi Thị Hoa,18/04/2005,Nữ,0932109876,buithihoa@gmail.com,258 Hoàng Mai,Hà Nội,001205043210,KT02,KT,2023-2027,Đang học,01/09/2023
+SV009,Ngô Văn Inh,22/09/2004,Nam,0921098765,ngovanin@gmail.com,369 Long Biên,Hà Nội,001204098765,CNTT02,CNTT,2022-2026,Bảo lưu,01/09/2022
+SV010,Đinh Thị Kim,08/01/2005,Nữ,0910987654,dinhthikim@gmail.com,741 Tây Hồ,Hà Nội,001205012345,KT01,KT,2023-2027,Đang học,01/09/2023

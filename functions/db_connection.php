@@ -3,8 +3,8 @@
 function getDbConnection() {
     $servername = "localhost";
     $username = "root";
-    $password = "12345678";
-    $dbname = "quanlysinhvien";
+    $password = "manhduy1107@";
+    $dbname = "qlhssv";
     $port = 3306;
 
     // Tạo kết nối
@@ -15,7 +15,8 @@ function getDbConnection() {
         die("Kết nối database thất bại: " . mysqli_connect_error());
     }
     // Thiết lập charset cho kết nối (quan trọng để hiển thị tiếng Việt đúng)
-    mysqli_set_charset($conn, "utf8");
+    // Use utf8mb4 to fully support all Unicode characters including emoji and full Vietnamese repertoire
+    mysqli_set_charset($conn, "utf8mb4");
     return $conn;
 }
 

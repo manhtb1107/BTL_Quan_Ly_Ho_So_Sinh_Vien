@@ -1,0 +1,381 @@
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-nav a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb-nav span {
+    color: var(--text-secondary);
+}
+
+.breadcrumb-nav .current {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Profile Header */
+.profile-header {
+    margin-bottom: 1.5rem;
+}
+
+.profile-header .page-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.profile-header .page-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Student Info Header */
+.student-info-header {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.student-name-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.student-name-section strong {
+    color: var(--primary);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-action {
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-action.btn-secondary {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-action.btn-secondary:hover {
+    background: var(--bg-gray);
+}
+
+.btn-action.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-action.btn-primary:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+}
+
+/* Profile Content Layout */
+.profile-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.avatar-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--border);
+}
+
+.student-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--text-secondary);
+}
+
+.student-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.student-code {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-badge.status-đang-học {
+    background: #e6f4ea;
+    color: var(--success);
+}
+
+.status-badge.status-tốt-nghiệp {
+    background: #e8f0fe;
+    color: var(--primary);
+}
+
+.status-badge.status-bảo-lưu {
+    background: #fef7e0;
+    color: var(--warning);
+}
+
+/* Quick Info Card */
+.quick-info-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item i {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.info-item div {
+    flex: 1;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Profile Main */
+.profile-main {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+/* Tabs */
+.profile-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-light);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+    background: var(--white);
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    background: var(--white);
+    border-bottom-color: var(--primary);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 2rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+}
+
+/* Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.info-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-field.full-width {
+    grid-column: span 2;
+}
+
+.info-field label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.info-field p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0.75rem;
+    background: var(--bg-light);
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .student-info-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .action-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .btn-action {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .profile-sidebar {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-field.full-width {
+        grid-column: span 1;
+    }
+    
+    .profile-tabs {
+        flex-direction: column;
+    }
+}

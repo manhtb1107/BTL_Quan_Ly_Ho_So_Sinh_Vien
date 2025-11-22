@@ -1,0 +1,428 @@
+/* Student Management Specific Styles */
+.filter-section {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+}
+
+.filter-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.search-input-wrapper i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.search-input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 150px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-apply-filter {
+    padding: 0.625rem 1.25rem;
+    background: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-apply-filter:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.25);
+}
+
+.btn-apply-filter:active {
+    transform: translateY(0);
+}
+
+.btn-clear-filter {
+    padding: 0.625rem 1.25rem;
+    background: var(--white);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-clear-filter:hover {
+    background: var(--bg-light);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
+}
+
+/* Table Styles */
+.table-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+}
+
+.data-table {
+    width: 100%;
+    margin: 0;
+}
+
+.data-table thead th {
+    background: var(--bg-light);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1rem 0.75rem;
+    border: none;
+    white-space: nowrap;
+}
+
+.data-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.data-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+.data-table tbody td {
+    padding: 1rem 0.75rem;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    vertical-align: middle;
+}
+
+.student-code-badge {
+    background: #e8f0fe;
+    color: var(--primary);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.student-name-cell {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.student-id-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.status-badge {
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.status-badge.active {
+    background: #e6f4ea;
+    color: var(--success);
+}
+
+.status-badge.graduated {
+    background: #e8f0fe;
+    color: var(--primary);
+}
+
+.status-badge.suspended {
+    background: #fef7e0;
+    color: var(--warning);
+}
+
+.status-badge.expelled {
+    background: #fce8e6;
+    color: var(--danger);
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0 0.15rem;
+    font-size: 0.85rem;
+}
+
+.action-btn.view {
+    background: #e8f0fe;
+    color: var(--primary);
+}
+
+.action-btn.view:hover {
+    background: #d2e3fc;
+}
+
+.action-btn.edit {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.action-btn.edit:hover {
+    background: #ffe0b2;
+}
+
+.action-btn.delete {
+    background: #fce8e6;
+    color: var(--danger);
+}
+
+.action-btn.delete:hover {
+    background: #f8d7da;
+}
+
+/* Pagination */
+.pagination-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.pagination-info {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.pagination-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text-primary);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+}
+
+.pagination-btn:hover:not(:disabled):not(.active) {
+    background: var(--bg-light);
+    border-color: var(--primary);
+}
+
+.pagination-btn.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* No Data State */
+.no-data {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-secondary);
+}
+
+.no-data i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-input-wrapper {
+        min-width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    .filter-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .btn-apply-filter,
+    .btn-clear-filter {
+        width: 100%;
+    }
+    
+    .data-table {
+        font-size: 0.8rem;
+    }
+    
+    .data-table thead th,
+    .data-table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* Academic Year Badge */
+.academic-year-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--white);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+/* Status Badge Icons */
+.status-badge i {
+    font-size: 0.75rem;
+}
+
+/* Table Column Widths */
+.data-table th:nth-child(6),
+.data-table td:nth-child(6) {
+    min-width: 120px;
+}
+
+.data-table th:nth-child(7),
+.data-table td:nth-child(7) {
+    min-width: 140px;
+}
+
+/* Button improvements */
+.btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.25);
+    color: var(--white);
+}
+
+.btn-success {
+    background: var(--success);
+    color: var(--white);
+    border-color: var(--success);
+}
+
+.btn-success:hover {
+    background: #2d9348;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.25);
+    color: var(--white);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: var(--white);
+    border-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background: #d93025;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(234, 67, 53, 0.25);
+    color: var(--white);
+}
+
+.btn:active {
+    transform: translateY(0);
+}

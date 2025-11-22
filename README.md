@@ -4,8 +4,11 @@
     </a>
 </h2>
 <h2 align="center">
-    Open Source Software Development
+    Hệ thống quản lý hồ sơ sinh viên đại học
 </h2>
+<h3 align="center">
+    Student Records Management System
+</h3>
 <div align="center">
     <p align="center">
         <img src="docs/logo/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
